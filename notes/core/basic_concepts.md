@@ -87,6 +87,18 @@ We can also access the tuple elements by indices.
 
 `t.0` gives us 46.
 
+We can define tuples inside tuples too.
+
+`let f = (5, t)` OR `let f = (5, (46, 2.5, 'j'))`
+
+If we try to print f.1, The statement will fail because of trait which we are going to learn later.
+
+We can use `{:?}` in print macro and boom we can print it. This sign is called debug flag, since tuples have debug traits built in we can do it this way. To beautify the output we can use `{:#?}`
+
+> This debug trait doesn't work with too long tuples.
+
+If We declare an empty touple, This is called a unit value. For example main() returns an empty touple which means they don't return anything.
+
 #### Arrays
 
 Collections of elements with one type.
@@ -98,9 +110,49 @@ We can access them using indices.
 `a[0]`
 
 > Arrays are useful when we want the data to be allocated on the stack rather than the heap and, when we want to make sure to have fixed amount of elements.
-
 > We have Vector for dynamic arrays.
+
+We can declare array datatype and capacity in signature.
+
+`let xs: [i32; 5] = [1,5,16,6,8];`
+
+> We can access array length by `len()` function.
+
+The `&` is operator like pointers to refrence to something. When use arrays like this:
+
+`let yx : &xs[2..4];`
+
+What happens is that it populates the yx array with the xs 2 till 4 indices. The 4 is not included.
+
+We can use debug trait to print the whole arrays.
+
+#### Strings
+
+We can define Strings in rust with double quots and functions but, both these will give us different types. In rust Strings are compund types like arrays. When we write
+
+`let s = "String";`
+
+This will return type of `&str` which we call slice of String. However if we
+
+`let s = String::from("String!");`
+
+This will return String type.
+
+We can take a slice (subString) of a String like we did back in arrays.
+
+`let ss = &s[2..4];`
+
+We can concat our Strings using `+` operator.
 
 ### Operators
 
 - Mathematics [+ - * / %]
+
+### Print
+
+We have macros to print values in terminal or console.
+`println!()`
+
+In this println we can format the string like logback or slf4j in java.
+
+`println!("{} {}", 1, 6)`
