@@ -16,7 +16,7 @@ We can create a binary project using cargo by:
 
 `cargo new project_name --bin`
 
-We have a cargo.tml file which is our package file. It has metadata of our project and also we can specify the dependencies of proejcts here.
+We have a cargo.toml file which is our package file. It has metadata of our project and also we can specify the dependencies of proejcts here.
 
 We'll get a main.rs file which contains hello world.
 `fn` is the macro respobsible to create a function in rust language. `main()` function is the entry point of our rust program.
